@@ -1,5 +1,6 @@
 package praktikum;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -41,6 +42,12 @@ public class BurgerTest {
         Mockito.when(filling.getPrice()).thenReturn(200f);
     }
 
+    @Test
+    public void checkSetBunIsNotNull() {
+        burger.setBuns(bun);
+        Assert.assertNotNull(bun);
+    }
+    //Еще раз посмотрел вроде кроме отдельно setBuns все остальное вызывается
     @Test
     public void checkGetPriceWithNoIngredients() {
         burger.setBuns(bun);
